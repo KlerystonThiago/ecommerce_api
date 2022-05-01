@@ -11,6 +11,7 @@ class Product extends Model
         'name',
         'description',
         'price',
+        'highlights',
         'voltage',
         'brand_id',
         'image'

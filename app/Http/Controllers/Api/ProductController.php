@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\ProductRequest;
 use App\Http\Resources\ProductResource;
+use App\Http\Resources\highlightsResource;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Product;
@@ -113,5 +114,10 @@ class ProductController extends Controller
         }
 
         return $image;
+    }
+
+    public function highlights(){
+        $products = Product::where('highlights', 1)->get();
+        return HighlightsResource::collection($products);
     }
 }

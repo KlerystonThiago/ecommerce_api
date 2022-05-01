@@ -13,6 +13,7 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->longText('description');
             $table->double('price', 8, 2);
+            $table->boolean('highlights');
             $table->string('voltage');
             $table->integer('brand_id');
             $table->string('image');
